@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "customConditions": ["colors", "development"]
+  },
+  "extends": "./tsconfig.json"
+}
