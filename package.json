@@ -42,7 +42,11 @@
       "colors": "./src/index.mts",
       "default": "./dist/index.mjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./utils": {
+      "colors": "./src/utils/index.mts",
+      "default": "./dist/utils/index.mjs"
+    }
   },
   "imports": {
     "#interfaces/*": {
@@ -66,6 +70,10 @@
     "#types/*": {
       "colors": "./src/types/*.mts",
       "default": "./dist/types/*.d.mts"
+    },
+    "#utils/*": {
+      "colors": "./src/utils/*.mts",
+      "default": "./dist/utils/*.mjs"
     }
   },
   "module": "./dist/index.mjs",
