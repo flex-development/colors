@@ -1,4 +1,6 @@
+import type Process from '#interfaces/process'
+
 declare module '#internal/process' {
-  const process: NodeJS.Process & { browser?: boolean }
+  const process: Process
   export default process
 }

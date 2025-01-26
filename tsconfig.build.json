@@ -13,5 +13,9 @@
   },
   "exclude": ["**/__tests__/**"],
   "extends": "./tsconfig.json",
+  "files": [
+    "typings/@types/node/process.d.ts",
+    "typings/typescript/lib.dom.d.ts"
+  ],
   "include": ["dist/**/*", "src/**/**.mts"]
 }

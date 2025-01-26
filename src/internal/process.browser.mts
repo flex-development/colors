@@ -3,7 +3,18 @@
  * @module colors/internal/process/browser
  */
 
-export default {
+import type Process from '#interfaces/process'
+
+/**
+ * Information about the current Node.js process.
+ *
+ * @const {Required<Process>} process
+ */
+const process: Required<Process> = {
+  argv: [],
   browser: true,
-  env: {}
+  env: {},
+  platform: ''
 }
+
+export default process

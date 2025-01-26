@@ -53,6 +53,17 @@
       "colors": "./src/interfaces/*.mts",
       "default": "./dist/interfaces/*.d.mts"
     },
+    "#internal/is-tty": {
+      "browser": {
+        "colors": "./src/internal/is-tty.browser.mts",
+        "default": "./dist/internal/is-tty.browser.mjs"
+      },
+      "node": {
+        "colors": "./src/internal/is-tty.node.mts",
+        "default": "./dist/internal/is-tty.node.mjs"
+      },
+      "default": "./dist/internal/is-tty.node.mjs"
+    },
     "#internal/process": {
       "types": "./src/internal/process.d.mts",
       "browser": {
@@ -61,6 +72,18 @@
       },
       "node": "process",
       "default": "process"
+    },
+    "#internal/window": {
+      "types": "./src/internal/window.d.mts",
+      "browser": {
+        "colors": "./src/internal/window.browser.mts",
+        "default": "./dist/internal/window.browser.mjs"
+      },
+      "node": {
+        "colors": "./src/internal/window.node.mts",
+        "default": "./dist/internal/window.node.mjs"
+      },
+      "default": "./dist/internal/window.node.mjs"
     },
     "#internal/*": {
       "colors": "./src/internal/*.mts",

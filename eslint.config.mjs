@@ -4,6 +4,8 @@
  * @see https://eslint.org/docs/user-guide/configuring
  */
 
+import globals from 'globals'
+
 /**
  * Root eslint configuration object.
  *
@@ -28,5 +30,9 @@ export default [
       '**/dist/',
       '**/tsconfig*temp.json'
     ]
+  },
+  {
+    files: ['src/internal/*.browser.mts'],
+    languageOptions: { globals: globals.browser }
   }
 ]

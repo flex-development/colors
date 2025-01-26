@@ -62,7 +62,9 @@ function config(env: ConfigEnv): ViteUserConfig {
           '**/types/',
           '**/index.mts',
           '!src/index.mts',
-          'src/internal/*.browser.mts'
+          'src/internal/*.browser.mts',
+          'src/internal/is-tty.node.mts',
+          'src/internal/window.node.mts'
         ],
         extension: ['.mts'],
         include: ['src'],

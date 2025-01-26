@@ -6,7 +6,7 @@
     "customConditions": ["colors", "development"],
     "declaration": true,
     "declarationMap": true,
-    "lib": ["es2024"],
+    "lib": ["es2024", "dom"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "newLine": "lf",
