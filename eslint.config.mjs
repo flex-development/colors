@@ -32,7 +32,20 @@ export default [
     ]
   },
   {
+    files: ['src/create-colors.mts'],
+    rules: {
+      'unicorn/prefer-string-slice': 0
+    }
+  },
+  {
     files: ['src/internal/*.browser.mts'],
     languageOptions: { globals: globals.browser }
+  },
+  {
+    files: ['src/internal/map.mts', 'src/internal/wrap.mts'],
+    rules: {
+      'unicorn/escape-case': 0,
+      'unicorn/no-hex-escape': 0
+    }
   }
 ]

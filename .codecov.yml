@@ -82,7 +82,10 @@ ignore:
   - '**/types/**'
   - '!src/index.mts'
   - src/internal/*.browser.mts
+  - src/internal/is-tty.node.mts
+  - src/internal/window.node.mts
 
 profiling:
   critical_files_paths:
+    - src/create-colors.mts
     - src/internal/supported.mts

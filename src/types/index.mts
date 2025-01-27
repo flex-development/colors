@@ -3,4 +3,6 @@
  * @module colors/types
  */
 
+export type { default as Color } from '#types/color'
+export type { default as ColorConfig } from '#types/color-config'
 export type { default as ToString } from '#types/to-string'

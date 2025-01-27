@@ -49,6 +49,15 @@
     }
   },
   "imports": {
+    "#colors": {
+      "colors": "./src/colors.mts",
+      "default": "./dist/colors.mjs"
+    },
+    "#create-colors": {
+      "colors": "./src/create-colors.mts",
+      "default": "./dist/create-colors.mjs"
+    },
+    "#fixtures/*": "./__fixtures__/*.mts",
     "#interfaces/*": {
       "colors": "./src/interfaces/*.mts",
       "default": "./dist/interfaces/*.d.mts"
