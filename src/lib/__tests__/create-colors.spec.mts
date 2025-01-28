@@ -1,15 +1,15 @@
 /**
  * @file Unit Tests - createColors
- * @module colors/tests/unit/createColors
+ * @module colors/lib/tests/unit/createColors
  */
 
 import c from '#colors'
-import testSubject from '#create-colors'
 import fmt from '#fixtures/fmt'
 import wrap from '#internal/wrap'
+import testSubject from '#lib/create-colors'
 import type { ColorFunction, Colors } from '@flex-development/colors'
 
-describe('unit:createColors', () => {
+describe('unit:lib/createColors', () => {
   describe('<color>', () => {
     let color: boolean
     let subject: Colors

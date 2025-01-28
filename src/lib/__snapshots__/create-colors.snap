@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`unit:lib/createColors > nesting > should return colorized \`value\` with proper nesting 1`] = `"[1mBOLD [31mRED [2mDIM[22m[1m RED[39m BOLD[22m"`;
+
+exports[`unit:lib/createColors > replace close sequence > should handle close sequence replacement (0) 1`] = `"[31mfoo [33mbar[31m baz[39m"`;
+
+exports[`unit:lib/createColors > replace close sequence > should handle close sequence replacement (1) 1`] = `"[1mfoo [31m[2mbar[22m[1m[39m baz[22m"`;
+
+exports[`unit:lib/createColors > replace close sequence > should handle close sequence replacement (2) 1`] = `"[33mfoo [31m[1mred[22m[33m bar [36mcyan[33m baz[39m"`;
+
+exports[`unit:lib/createColors > wrapping > should return colorized \`value\` with proper wrapping (0) 1`] = `"[31m[1m==TEST==[22m[39m"`;
+
+exports[`unit:lib/createColors > wrapping > should return colorized \`value\` with proper wrapping (1) 1`] = `"[1m[33m[41m[3m==TEST==[23m[49m[39m[22m"`;

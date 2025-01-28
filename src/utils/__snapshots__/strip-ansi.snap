@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`unit:utils/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[1mbold text\\u001b[22m") 1`] = `"bold text"`;
-
-exports[`unit:utils/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[4m\\u001b[34m\\u001b[1mbold blue underlined text\\u001b[22m\\u001b[39m\\u001b[24m") 1`] = `"bold blue underlined text"`;
-
-exports[`unit:utils/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[34m\\u001b[1mbold blue text\\u001b[22m\\u001b[39m") 1`] = `"bold blue text"`;
-
-exports[`unit:utils/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[104m\\u001b[1mbold text with bright blue background\\u001b[22m\\u001b[49m") 1`] = `"bold text with bright blue background"`;

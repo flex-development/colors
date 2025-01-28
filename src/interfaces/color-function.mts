@@ -25,12 +25,12 @@ interface ColorFunction {
   close: string
 
   /**
-   * Opening sequence used to set color or styles.
+   * Sequence used to set colors.
    */
   open: string
 
   /**
-   * Replacement sequence.
+   * Reset sequence replacement.
    */
   replace?: string | null | undefined
 }

@@ -3,10 +3,10 @@
  * @module colors/interfaces/ColorizerOptions
  */
 
-import type { Color, ColorConfig } from '@flex-development/colors'
+import type { ColorConfigs } from '@flex-development/colors'
 
 /**
- * Options for creating a colorizer object.
+ * Options for creating a colorizer.
  */
 interface ColorizerOptions {
   /**
@@ -19,10 +19,9 @@ interface ColorizerOptions {
   /**
    * Color function config map.
    *
-   * @see {@linkcode ColorConfig}
-   * @see {@linkcode Color}
+   * @see {@linkcode ColorConfigs}
    */
-  colors?: Partial<Record<Color, ColorConfig>> | null | undefined
+  colors?: Partial<ColorConfigs> | null | undefined
 }
 
 export type { ColorizerOptions as default }

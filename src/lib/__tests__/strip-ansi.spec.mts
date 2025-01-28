@@ -1,11 +1,11 @@
 /**
  * @file Unit Tests - stripAnsi
- * @module colors/utils/tests/unit/stripAnsi
+ * @module colors/lib/tests/unit/stripAnsi
  */
 
-import testSubject from '#utils/strip-ansi'
+import testSubject from '#lib/strip-ansi'
 
-describe('unit:utils/stripAnsi', () => {
+describe('unit:lib/stripAnsi', () => {
   it.each<Parameters<typeof testSubject>>([
     ['\x1B[1mbold text\u001B[22m'],
     ['\x1B[34m\x1B[1mbold blue text\u001B[22m\x1B[39m'],

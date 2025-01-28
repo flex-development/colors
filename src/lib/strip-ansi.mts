@@ -1,6 +1,6 @@
 /**
- * @file Utilities - stripAnsi
- * @module colors/utils/stripAnsi
+ * @file stripAnsi
+ * @module colors/lib/stripAnsi
  */
 
 import ANSI_PATTERN from '#internal/ansi-pattern'
@@ -10,9 +10,6 @@ import type { ToString } from '@flex-development/colors'
  * Remove ANSI escape codes from `value`.
  *
  * @see {@linkcode ToString}
- *
- * @category
- *  utils
  *
  * @this {void}
  *

@@ -8,13 +8,9 @@ import type { Color, ColorFunctions } from '@flex-development/colors'
 /**
  * A colorizer.
  *
- * Colorizer objects contain functions for coloring text and other values.
- *
- * Each {@linkcode Color} function corresponds to a terminal color.
- * {@linkcode Colors.colorize} can also be used to apply different colors.
- *
- * {@linkcode Colors.color} can be used to disable or enable color output. If
- * color output is not supported when enabled, it'll be disabled.
+ * Colorizers contain {@linkcode Color} functions. Each function corresponds to
+ * a terminal color or style. The `color` property ({@linkcode Colors.color}) is
+ * an accessor that can be used to disable or enable color output.
  *
  * @see {@linkcode ColorFunctions}
  *

@@ -32,12 +32,6 @@ export default [
     ]
   },
   {
-    files: ['src/create-colors.mts'],
-    rules: {
-      'unicorn/prefer-string-slice': 0
-    }
-  },
-  {
     files: ['src/internal/*.browser.mts'],
     languageOptions: { globals: globals.browser }
   },
@@ -46,6 +40,12 @@ export default [
     rules: {
       'unicorn/escape-case': 0,
       'unicorn/no-hex-escape': 0
+    }
+  },
+  {
+    files: ['src/lib/create-colors.mts'],
+    rules: {
+      'unicorn/prefer-string-slice': 0
     }
   }
 ]

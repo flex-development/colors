@@ -1,6 +1,6 @@
 /**
- * @file Utilities - isColorSupported
- * @module colors/utils/isColorSupported
+ * @file isColorSupported
+ * @module colors/lib/isColorSupported
  */
 
 import isTTY from '#internal/is-tty'
@@ -10,9 +10,6 @@ import window from '#internal/window'
 
 /**
  * Check if color output is supported.
- *
- * @category
- *  utils
  *
  * @this {void}
  *

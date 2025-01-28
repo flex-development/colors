@@ -12,7 +12,9 @@ import type { ColorFunction } from '@flex-development/colors'
  *
  * @example
  *  declare module '@flex-development/colors' {
- *    interface ColorFunctions {}
+ *    interface ColorFunctions {
+ *      blink: ColorFunction
+ *    }
  *  }
  */
 interface ColorFunctions {

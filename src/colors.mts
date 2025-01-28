@@ -3,11 +3,11 @@
  * @module colors/colors
  */
 
-import createColors from '#create-colors'
+import createColors from '#lib/create-colors'
 import type { Colors } from '@flex-development/colors'
 
 /**
- * Default colorizer object.
+ * Default colorizer.
  *
  * @see {@linkcode Colors}
  *

@@ -4,7 +4,7 @@
  */
 
 import type TestSubject from '#interfaces/colorizer-options'
-import type { Color, ColorConfig } from '@flex-development/colors'
+import type { ColorConfigs } from '@flex-development/colors'
 import type { Nilable } from '@flex-development/tutils'
 
 describe('unit-d:interfaces/ColorizerOptions', () => {
@@ -14,9 +14,9 @@ describe('unit-d:interfaces/ColorizerOptions', () => {
       .toEqualTypeOf<Nilable<boolean>>()
   })
 
-  it('should match [colors?: Partial<Record<Color, ColorConfig>> | null | undefined]', () => {
+  it('should match [colors?: Partial<ColorConfigs> | null | undefined]', () => {
     expectTypeOf<TestSubject>()
       .toHaveProperty('colors')
-      .toEqualTypeOf<Nilable<Partial<Record<Color, ColorConfig>>>>()
+      .toEqualTypeOf<Nilable<Partial<ColorConfigs>>>()
   })
 })

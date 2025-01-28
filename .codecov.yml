@@ -87,5 +87,5 @@ ignore:
 
 profiling:
   critical_files_paths:
-    - src/create-colors.mts
     - src/internal/supported.mts
+    - src/lib/create-colors.mts

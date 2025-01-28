@@ -6,7 +6,8 @@
 /**
  * List, where the first value is the numeric code for an ANSI escape sequence,
  * and the second is the numeric code for the reset sequence. The last value is
- * an optional replacement string for the reset sequence.
+ * an optional replacement for the reset sequence (used in complex cases to nest
+ * styles without breaking existing color sequences).
  */
 type ColorConfig = [
   open: number,

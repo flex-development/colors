@@ -1,12 +1,12 @@
 /**
  * @file createColors
- * @module colors/createColors
+ * @module colors/lib/createColors
  */
 
 import map from '#internal/map'
 import wrap from '#internal/wrap'
+import isColorSupported from '#lib/is-color-supported'
 import type { ColorizerOptions, Colors } from '@flex-development/colors'
-import { isColorSupported } from '@flex-development/colors/utils'
 
 export default createColors
 

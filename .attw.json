@@ -2,10 +2,6 @@
   "color": true,
   "emoji": true,
   "format": "ascii",
-  "ignoreRules": [
-    "cjs-resolves-to-esm",
-    "internal-resolution-error",
-    "no-resolution"
-  ],
+  "ignoreRules": ["cjs-resolves-to-esm", "internal-resolution-error"],
   "summary": true
 }

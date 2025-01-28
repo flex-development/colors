@@ -9,7 +9,7 @@
  * @this {void}
  *
  * @param {unknown} value
- *  The thing to convert to a string
+ *  The thing to stringify
  * @return {string}
  *  Stringified `value`
  */

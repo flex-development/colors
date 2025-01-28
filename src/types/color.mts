@@ -11,6 +11,6 @@ import type { ColorFunctions } from '@flex-development/colors'
  * To register custom colors, augment {@linkcode ColorFunctions}. They will be
  * added to this union automatically.
  */
-type Color = Extract<keyof ColorFunctions, string>
+type Color = Extract<keyof ColorFunctions, any>
 
 export type { Color as default }

@@ -1,8 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`e2e:colors/utils > should expose public api 1`] = `
-[
-  "isColorSupported",
-  "stripAnsi",
-]
-`;
