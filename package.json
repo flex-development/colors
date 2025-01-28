@@ -263,12 +263,12 @@
     "typescript-eslint": "8.22.0",
     "unified": "11.0.5",
     "vfile": "6.0.3",
-    "vite": "5.4.14",
+    "vite": "6.0.11",
     "vitest": "3.0.4",
     "yaml-eslint-parser": "1.2.3"
   },
   "resolutions": {
-    "vite": "5.4.14"
+    "vite": "6.0.11"
   },
   "packageManager": "yarn@4.6.0",
   "sideEffects": false
