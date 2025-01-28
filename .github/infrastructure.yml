@@ -162,7 +162,7 @@ repository:
   automated_security_fixes: true
   default_branch: main
   delete_branch_on_merge: true
-  description: Output colorful messages in the terminal or browser console that support ANSI colors
+  description: ':rainbow: a small library for coloring and styling messages'
   has_issues: true
   has_projects: true
   has_wiki: false

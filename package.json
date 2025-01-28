@@ -1,6 +1,6 @@
 {
   "name": "@flex-development/colors",
-  "description": "Output colorful messages in the terminal or browser console that support ANSI colors",
+  "description": "Colorize messages in the terminal and browser",
   "version": "0.0.0",
   "keywords": [
     "ansi",
