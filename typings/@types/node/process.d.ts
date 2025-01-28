@@ -11,7 +11,7 @@ declare namespace NodeJS {
     CI?: string | undefined
 
     /**
-     * Enforce a specific color support.
+     * Force color support.
      *
      * - `'0'`: 2 colors (disables colors)
      * - `'1'`: 16 colors
@@ -36,6 +36,8 @@ declare namespace NodeJS {
 
     /**
      * Disable color support.
+     *
+     * @see https://no-color.org
      */
     NO_COLOR?: string | undefined
 

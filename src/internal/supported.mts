@@ -9,6 +9,8 @@ import bool from '#internal/bool'
 /**
  * Check if color output is supported.
  *
+ * @see https://no-color.org
+ *
  * @internal
  *
  * @this {void}
@@ -40,8 +42,9 @@ function supported(
    *
    * @const {boolean} disabled
    */
-  const disabled: boolean = bool(env.NO_COLOR) ||
+  const disabled: boolean = 'NO_COLOR' in env && env.NO_COLOR !== '' ||
     argv.includes('--no-color') ||
+    bool(env.NODE_DISABLE_COLORS) ||
     bool(env.FORCE_COLOR, ['0'])
 
   /**
@@ -50,6 +53,7 @@ function supported(
    * @const {boolean} node
    */
   const node: boolean = !disabled && (
+    bool(env.FORCE_COLOR, ['1', '2', '3']) ||
     argv.includes('--color') ||
     platform === 'win32' ||
     (tty && !bool(env.TERM, ['dumb'])) ||

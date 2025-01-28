@@ -4,9 +4,10 @@
  * @see https://vitest.dev/advanced/reporters#exported-reporters
  */
 
+import colors from '#colors'
+import type { Colors } from '@flex-development/colors'
 import type { Task, TaskResultPack } from '@vitest/runner'
 import { getNames, getTests } from '@vitest/runner/utils'
-import colors, { type Colors } from 'tinyrainbow'
 import type { RunnerTask, RunnerTestFile } from 'vitest'
 import type { ConfigEnv } from 'vitest/config'
 import { DefaultReporter, type Reporter } from 'vitest/reporters'

@@ -13,7 +13,9 @@ describe('unit:internal/supported', () => {
   it.each<Parameters<typeof testSubject>>([
     [isTTY, { argv: ['--no-color'] }, windowNode],
     [isTTY, { env: { FORCE_COLOR: '0' } }, windowNode],
+    [isTTY, { env: { NO_COLOR: '0' } }, windowNode],
     [isTTY, { env: { NO_COLOR: '1' } }, windowNode],
+    [isTTY, { env: { NODE_DISABLE_COLORS: '1' } }, windowNode],
     [isTTYBrowser, null, windowNode],
     [isTTYBrowser, processBrowser, windowNode],
     [true, { env: { TERM: 'dumb' } }, null]
@@ -29,6 +31,9 @@ describe('unit:internal/supported', () => {
     [false, processBrowser, { chrome: true }],
     [isTTY, { argv: ['--color'] }, windowNode],
     [isTTY, { env: { CI: 'true' } }, null],
+    [isTTY, { env: { FORCE_COLOR: '1' } }, windowNode],
+    [isTTY, { env: { FORCE_COLOR: '2' } }, windowNode],
+    [isTTY, { env: { FORCE_COLOR: '3' } }, windowNode],
     [isTTY, { platform: 'win32' }, windowNode],
     [true, { env: { TERM: 'xterm-256color' } }, null]
   ])('should return `true` if color output is supported (%#)', (
