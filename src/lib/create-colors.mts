@@ -6,7 +6,7 @@
 import map from '#internal/map'
 import wrap from '#internal/wrap'
 import isColorSupported from '#lib/is-color-supported'
-import type { ColorizerOptions, Colors } from '@flex-development/colors'
+import type { Color, ColorizerOptions, Colors } from '@flex-development/colors'
 
 export default createColors
 
@@ -90,10 +90,18 @@ function createColors(
 
     colorizer.close = wrap(close)
     colorizer.open = wrap(open)
-    colorizer.replace = replace
 
-    Object.defineProperties(colorizer, { name: { value: color } })
-    Object.defineProperty(colors, color, { enumerable: true, value: colorizer })
+    Object.defineProperty(colors, color, {
+      enumerable: true,
+      value: colorizer.bind(colors)
+    })
+
+    Object.defineProperties(colors[color as Color], {
+      close: { enumerable: true, value: colorizer.close },
+      name: { value: color },
+      open: { enumerable: true, value: colorizer.open },
+      replace: { enumerable: true, value: replace }
+    })
 
     /**
      * Colorize `input`.
@@ -114,7 +122,7 @@ function createColors(
       const string: string = String(input)
 
       if (this.color) {
-        const { close, open, replace } = colorizer
+        const { close, open } = colorizer
 
         /**
          * Index of closing sequence in {@linkcode string}.
