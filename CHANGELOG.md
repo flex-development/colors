@@ -1,3 +1,20 @@
+## [1.0.1](https://github.com/flex-development/colors/compare/1.0.0...1.0.1) (2025-01-30)
+
+### :package: Build
+
+- [[`5bc6668`](https://github.com/flex-development/colors/commit/5bc66687b3f14fd9dd4b0e73ed0c170ec82468f9)] **deps-dev:** Bump @stylistic/eslint-plugin from 3.0.0 to 3.0.1 ([#13](https://github.com/flex-development/colors/issues/13))
+- [[`c667be1`](https://github.com/flex-development/colors/commit/c667be1ac717a80487b9f7e6e176a420416993f9)] **deps-dev:** Bump cspell from 8.17.2 to 8.17.3 ([#11](https://github.com/flex-development/colors/issues/11))
+- [[`b16a45d`](https://github.com/flex-development/colors/commit/b16a45dbe6d76ab71950277a1cfaf85f82b037a2)] **deps-dev:** Bump the remark group with 63 updates ([#8](https://github.com/flex-development/colors/issues/8))
+- [[`a2c724f`](https://github.com/flex-development/colors/commit/a2c724f4187d158526764887fac0b787072543eb)] **deps-dev:** Bump the typescript-eslint group with 3 updates ([#9](https://github.com/flex-development/colors/issues/9))
+
+### :robot: Continuous Integration
+
+- [[`c931c0d`](https://github.com/flex-development/colors/commit/c931c0de5e33b2ffe632fd272a29d4efa42e12ab)] **deps:** Bump GitGuardian/ggshield-action from 1.35.0 to 1.36.0 ([#12](https://github.com/flex-development/colors/issues/12))
+
+### :bug: Fixes
+
+- [[`82d7d59`](https://github.com/flex-development/colors/commit/82d7d59b85940df419ea7ac9a4d7a8dce0787779)] **lib:** [`createColors`] bind color functions
+
 ## 1.0.0 (2025-01-27)
 
 ### :package: Build
@@ -29,5 +46,6 @@
 ### :mechanical_arm: Refactors
 
 - [[`4a2e09b`](https://github.com/flex-development/colors/commit/4a2e09b5cc72c8b02caf3cb479fc612f370e5e4e)] color support detection
+
 
 
