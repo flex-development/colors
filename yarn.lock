@@ -2216,13 +2216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pkgr/core@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@pkgr/core@npm:0.2.0"
-  checksum: 10/b7e126161ecf59ceaa0a95ba4b937cc57bf29c42bd72dc129391e4c9ab06aac31e37379dde4f523a736aab9765b18c2494096eedcbe1f494df415998eef2b949
-  languageName: node
-  linkType: hard
-
 "@pkgr/core@npm:^0.2.3":
   version: 0.2.4
   resolution: "@pkgr/core@npm:0.2.4"
@@ -10803,17 +10796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"synckit@npm:^0.11.2":
-  version: 0.11.2
-  resolution: "synckit@npm:0.11.2"
-  dependencies:
-    "@pkgr/core": "npm:^0.2.0"
-    tslib: "npm:^2.8.1"
-  checksum: 10/8dbf20a9f1cb9f168062b505302f87b434b6f808d61af94183583b1201f33ba0026469fb81dd20074c980bc56237c6bd4ccb640433b5734eef14f5a90c1bbf18
-  languageName: node
-  linkType: hard
-
-"synckit@npm:^0.11.4":
+"synckit@npm:^0.11.2, synckit@npm:^0.11.4":
   version: 0.11.4
   resolution: "synckit@npm:0.11.4"
   dependencies:
