@@ -3,8 +3,8 @@
 exports[`e2e:colors > should expose public api 1`] = `
 [
   "colors",
-  "default",
   "createColors",
+  "default",
   "isColorSupported",
   "stripAnsi",
 ]

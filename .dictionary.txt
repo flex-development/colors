@@ -2,10 +2,7 @@ attw
 cefc
 commitlintrc
 dedupe
-dessant
 devlop
-docast
-dohm
 dprint
 fbca
 ggshield
@@ -16,7 +13,6 @@ kaisugi
 mbold
 nvmrc
 pkgs
-remarkrc
 sarif
 shfmt
 unstub

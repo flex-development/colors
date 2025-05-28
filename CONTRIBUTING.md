@@ -105,14 +105,13 @@ Follow the steps below to setup your local development environment:
 | name                |
 | ------------------- |
 | `CODECOV_TOKEN`     |
-| `GITHUB_TOKEN`      |
 | `HOMEBREW_BREWFILE` |
 | `NODE_NO_WARNINGS`  |
 | `ZSH_DOTENV_FILE`   |
 
 #### GitHub Actions
 
-Variables are prefixed by `secrets.` in [workflow](.github/workflows/) files.
+Variables are prefixed by `secrets.` and `vars.` in [workflow](.github/workflows/) files.
 
 ### Git Config
 
@@ -208,7 +207,6 @@ See [`.commitlintrc.ts`](.commitlintrc.ts) to view all commit guidelines.
 [dprint][] is used to format code and [ESLint][] to lint files.
 
 - [`.dprint.jsonc`](.dprint.jsonc)
-- [`eslint.base.config.mjs`](eslint.base.config.mjs)
 - [`eslint.config.mjs`](eslint.config.mjs)
 
 ### Making Changes
@@ -268,8 +266,8 @@ help with a test, don't forget to use [`it.skip`][vitest-test-skip] and/or [`it.
 
 ## Labels
 
-This project uses a well-defined list of labels to organize issues and pull requests. Most labels are scoped (i.e:
-`status:`).
+This project uses a well-defined list of labels to organize issues and pull requests.
+Most labels are scoped (i.e: `status:`).
 
 A list of labels can be found in [`.github/infrastructure.yml`](.github/infrastructure.yml).
 

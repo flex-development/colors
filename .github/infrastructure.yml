@@ -1,5 +1,5 @@
 # REPOSITORY INFRASTRUCTURE
-# https://github.com/flex-development/repostructure-action
+# https://github.com/flex-development/repostructure-action/tree/1.0.0
 ---
 branches:
   - name: main
@@ -22,9 +22,9 @@ branches:
       required_status_checks:
         checks:
           - context: add-to-project
+          - context: artifacts
           - context: auto-merge
           - context: auto-review
-          - context: build
           - context: changelog
           - context: commitlint
           - context: dependabot-dedupe
@@ -32,8 +32,8 @@ branches:
           - context: gitguardian
           - context: lint
           - context: spelling
-          - context: test (23)
-          - context: typescript (5.7.3)
+          - context: test (24)
+          - context: typescript
         strict: true
       restrictions: null
 environments:
@@ -56,9 +56,6 @@ labels:
   - name: flag:needs-refactor
     description: code improvements required before being merged
     color: fbca04
-  - name: scope:cjs
-    description: commonjs
-    color: 74cefc
   - name: scope:dependencies
     description: dependency updates
     color: 74cefc
@@ -76,9 +73,6 @@ labels:
     color: 74cefc
   - name: scope:ts
     description: typescript support
-    color: 74cefc
-  - name: scope:utils
-    description: utilities
     color: 74cefc
   - name: status:awaiting-answers
     description: needs clarification or more information from author
@@ -134,20 +128,23 @@ labels:
   - name: type:docs
     description: documentation improvements
     color: 0052cc
+  - name: type:bug
+    description: bug reports
+    color: 0052cc
   - name: type:feat
-    description: new features and improvements
+    description: new features
     color: 0052cc
   - name: type:fix
-    description: bug reports and fixes
+    description: bug fixes
     color: 0052cc
   - name: type:perf
     description: performance updates
     color: 0052cc
-  - name: type:question
-    description: questions
-    color: 0052cc
   - name: type:refactor
     description: code improvements
+    color: 0052cc
+  - name: type:story
+    description: user stories
     color: 0052cc
   - name: type:task
     description: project tasks

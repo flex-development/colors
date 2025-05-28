@@ -15,6 +15,7 @@
   "ignorePaths": [
     "**/*.patch",
     "**/*.snap",
+    "**/*.svg",
     "**/*.wasm",
     "**/.*ignore",
     "**/.gitconfig",
@@ -31,7 +32,7 @@
     "yarn.lock"
   ],
   "ignoreRegExpList": [],
-  "ignoreWords": [],
+  "ignoreWords": ["fldv"],
   "language": "en-US",
   "patterns": [],
   "readonly": true,
