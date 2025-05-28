@@ -1,7 +1,7 @@
 {
   "name": "@flex-development/colors",
   "description": "Colorize messages in the terminal and browser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "ansi",
     "color",
