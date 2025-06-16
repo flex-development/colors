@@ -1431,7 +1431,7 @@ __metadata:
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
     "@tsconfig/strictest": "npm:2.0.5"
     "@types/is-ci": "npm:3.0.4"
-    "@types/node": "npm:24.0.1"
+    "@types/node": "npm:24.0.2"
     "@types/node-notifier": "npm:8.0.5"
     "@vates/toggle-scripts": "npm:1.0.0"
     "@vitest/coverage-v8": "npm:3.0.8"
@@ -2721,12 +2721,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:24.0.1":
-  version: 24.0.1
-  resolution: "@types/node@npm:24.0.1"
+"@types/node@npm:*, @types/node@npm:24.0.2":
+  version: 24.0.2
+  resolution: "@types/node@npm:24.0.2"
   dependencies:
     undici-types: "npm:~7.8.0"
-  checksum: 10/6b77554f8308148e00e9c7c264ccad3e9a3d360f10b75a727d44b9bba2377022179a76905fbe1bb426ea4c6ee9f45186797ec335a5dcab803435336576db18c6
+  checksum: 10/7c770ac13e08fb98121d15e0b9fc1cd6770212740401cdeed83d50cd00082fb6f0c3ee6cd8f7db28226e9ade71463ca0b9704f4b3929018ac2c3646c713e6d15
   languageName: node
   linkType: hard
 
