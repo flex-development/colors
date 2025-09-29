@@ -33,8 +33,6 @@ jobs:
     if: |
       github.actor == '${{ vars.DEPENDABOT }}'
       && startsWith(github.head_ref, 'dependabot/npm_and_yarn/')
-    permissions:
-      packages: read
     runs-on: ubuntu-latest
     steps:
       - id: debug
