@@ -8,7 +8,7 @@ import colors from '#colors'
 import type { Colors } from '@flex-development/colors'
 import { getNames } from '@vitest/runner/utils'
 import { ok } from 'devlop'
-import type { RunnerTask, RunnerTaskResultPack } from 'vitest'
+import type { RunnerTask } from 'vitest'
 import type { TestCase, TestModule, TestSuite, Vitest } from 'vitest/node'
 import { DefaultReporter, type Reporter } from 'vitest/reporters'
 
@@ -124,21 +124,6 @@ class VerboseReporter extends DefaultReporter implements Reporter {
   }
 
   /**
-   * Handle task updates.
-   *
-   * @public
-   * @instance
-   * @override
-   *
-   * @param {RunnerTaskResultPack[]} packs
-   *  List of task result packs
-   * @return {undefined}
-   */
-  public override onTaskUpdate(packs: RunnerTaskResultPack[]): undefined {
-    return void packs
-  }
-
-  /**
    * Print test `modules` after a test run.
    *
    * @public
@@ -239,7 +224,7 @@ class VerboseReporter extends DefaultReporter implements Reporter {
    *  The test module to print
    * @return {undefined}
    */
-  protected printTestModule(module: TestModule): undefined {
+  protected override printTestModule(module: TestModule): undefined {
     return void module
   }
 }

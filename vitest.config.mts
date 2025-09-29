@@ -7,12 +7,18 @@
 import Notifier from '#tests/reporters/notifier'
 import VerboseReporter from '#tests/reporters/verbose'
 import pathe from '@flex-development/pathe'
+import { ok } from 'devlop'
 import ci from 'is-ci'
 import {
   defineConfig,
   type ConfigEnv,
   type ViteUserConfig
 } from 'vitest/config'
+import type {
+  ResolveSnapshotPathHandlerContext,
+  TypecheckConfig
+} from 'vitest/node'
+import tsconfig from './tsconfig.json' with { type: 'json' }
 
 export default defineConfig(config)
 
@@ -31,11 +37,19 @@ export default defineConfig(config)
  */
 function config(this: void, env: ConfigEnv): ViteUserConfig {
   /**
-   * Whether typechecking is enabled.
+   * Options used to configure typechecks.
    *
-   * @const {boolean} typecheck
+   * @const {Partial<TypecheckConfig>} typecheck
    */
-  const typecheck: boolean = env.mode === 'typecheck'
+  const typecheck: Partial<TypecheckConfig> = {
+    allowJs: false,
+    checker: 'tsc',
+    enabled: env.mode === 'typecheck',
+    ignoreSourceErrors: false,
+    include: ['**/__tests__/*.spec-d.mts'],
+    only: true,
+    tsconfig: 'tsconfig.json'
+  }
 
   return {
     test: {
@@ -58,8 +72,7 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
           '**/types/',
           '**/index.mts',
           '!src/index.mts',
-          'src/internal/is-tty.node.mts',
-          'src/internal/window.node.mts'
+          'src/internal/is-tty.node.mts'
         ],
         extension: ['.mts'],
         include: ['src'],
@@ -76,12 +89,44 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
       globals: true,
       include: ['src/**/__tests__/*.spec.mts'],
       mockReset: true,
-      name: typecheck ? 'types' : undefined as never,
       outputFile: {
-        blob: `.vitest-reports/${env.mode}.blob.json`,
-        json: pathe.join('__tests__/reports', env.mode + '.json')
+        blob: pathe.join('.vitest-reports', env.mode + '.blob.json'),
+        json: pathe.join('__tests__', 'reports', env.mode + '.json')
       },
       passWithNoTests: true,
+      projects: [
+        {
+          extends: true,
+          resolve: {
+            conditions: [
+              'browser',
+              ...tsconfig.compilerOptions.customConditions
+            ]
+          },
+          test: {
+            env: { VITEST_ENVIRONMENT: 'happy-dom' },
+            environment: 'happy-dom',
+            environmentOptions: {},
+            name: 'browser',
+            setupFiles: ['./__tests__/setup/window.mts'],
+            typecheck
+          }
+        },
+        {
+          extends: true,
+          ssr: {
+            resolve: { conditions: tsconfig.compilerOptions.customConditions }
+          },
+          test: {
+            env: { VITEST_ENVIRONMENT: 'node' },
+            environment: 'node',
+            environmentOptions: {},
+            name: 'node',
+            setupFiles: [],
+            typecheck
+          }
+        }
+      ],
       reporters: JSON.parse(process.env['VITEST_UI'] ?? '0')
         ? [new Notifier(), new VerboseReporter()]
         : env.mode === 'reports'
@@ -95,16 +140,31 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
       /**
        * Store snapshots next to the directory of `file`.
        *
+       * @this {void}
+       *
        * @param {string} file
        *  Path to test file
        * @param {string} extension
        *  Snapshot extension
+       * @param {ResolveSnapshotPathHandlerContext} context
+       *  Snapshot path handler context
        * @return {string}
        *  Custom snapshot path
        */
-      resolveSnapshotPath(file: string, extension: string): string {
+      resolveSnapshotPath(
+        this: void,
+        file: string,
+        extension: string,
+        context: ResolveSnapshotPathHandlerContext
+      ): string {
+        const { VITEST_ENVIRONMENT: environment } = context.config.env
+
+        ok(typeof environment === 'string', 'expected `VITEST_ENVIRONMENT`')
+        ok(environment, 'expected `VITEST_ENVIRONMENT`')
+
         return pathe.resolve(
-          pathe.resolve(pathe.dirname(pathe.dirname(file)), '__snapshots__'),
+          pathe.dirname(pathe.dirname(file)),
+          pathe.join('__snapshots__', environment),
           pathe.basename(file).replace(/\.spec.mts/, '') + extension
         )
       },
@@ -117,40 +177,8 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
         printFunctionName: true
       },
       snapshotSerializers: [],
-      typecheck: {
-        allowJs: false,
-        checker: 'tsc',
-        enabled: typecheck,
-        ignoreSourceErrors: false,
-        include: ['**/__tests__/*.spec-d.mts'],
-        only: true,
-        tsconfig: './tsconfig.typecheck.json'
-      },
       unstubEnvs: true,
-      unstubGlobals: true,
-      workspace: typecheck ? undefined as never : [
-        {
-          extends: true,
-          resolve: { conditions: ['browser', 'colors', 'development'] },
-          test: {
-            environment: 'happy-dom',
-            environmentOptions: {},
-            name: 'browser',
-            setupFiles: ['./__tests__/setup/window.mts'],
-            typecheck: { enabled: false }
-          }
-        },
-        {
-          extends: true,
-          ssr: { resolve: { conditions: ['colors', 'development'] } },
-          test: {
-            environment: 'node',
-            environmentOptions: {},
-            name: 'node',
-            typecheck: { enabled: false }
-          }
-        }
-      ]
+      unstubGlobals: true
     }
   }
 }
