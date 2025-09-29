@@ -2,6 +2,8 @@
 
 [![github release](https://img.shields.io/github/v/release/flex-development/colors.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/colors/releases/latest)
 [![npm](https://img.shields.io/npm/v/@flex-development/colors.svg)](https://npmjs.com/package/@flex-development/colors)
+[![npm downloads](https://img.shields.io/npm/dm/@flex-development/colors.svg)](https://www.npmcharts.com/compare/@flex-development/colors?interval=30)
+[![install size](https://packagephobia.now.sh/badge?p=@flex-development/colors)](https://packagephobia.now.sh/result?p=@flex-development/colors)
 [![codecov](https://codecov.io/github/flex-development/colors/graph/badge.svg?token=n4qiZ2g5nb)](https://codecov.io/github/flex-development/colors)
 [![module type: esm](https://img.shields.io/badge/module%20type-esm-brightgreen)](https://github.com/voxpelli/badges-cjs-esm)
 [![license](https://img.shields.io/github/license/flex-development/colors.svg)](LICENSE.md)
