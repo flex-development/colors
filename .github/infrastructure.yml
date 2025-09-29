@@ -1,5 +1,5 @@
 # REPOSITORY INFRASTRUCTURE
-# https://github.com/flex-development/repostructure-action/tree/1.0.0
+# https://github.com/flex-development/repostructure-action
 ---
 branches:
   - name: main
@@ -25,11 +25,9 @@ branches:
           - context: artifacts
           - context: auto-merge
           - context: auto-review
-          - context: changelog
           - context: commitlint
           - context: dependabot-dedupe
           - context: format
-          - context: gitguardian
           - context: lint
           - context: spelling
           - context: test (24)
@@ -131,6 +129,9 @@ labels:
   - name: type:bug
     description: bug reports
     color: 0052cc
+  - name: type:epic
+    description: epics
+    color: 0052cc
   - name: type:feat
     description: new features
     color: 0052cc
@@ -139,6 +140,9 @@ labels:
     color: 0052cc
   - name: type:perf
     description: performance updates
+    color: 0052cc
+  - name: type:question
+    description: questions
     color: 0052cc
   - name: type:refactor
     description: code improvements
@@ -166,11 +170,6 @@ repository:
   homepage: https://github.com/flex-development/colors
   is_template: false
   private: false
-  security_and_analysis:
-    secret_scanning:
-      status: enabled
-    secret_scanning_push_protection:
-      status: disabled
   squash_merge_commit_message: BLANK
   squash_merge_commit_title: PR_TITLE
   topics:
