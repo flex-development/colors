@@ -65,6 +65,14 @@ coverage:
         threshold: 0%
 
 flags:
+  bun-canary:
+    carryforward: false
+    paths:
+      - src/
+  bun-latest:
+    carryforward: false
+    paths:
+      - src/
   node24:
     carryforward: false
     paths:

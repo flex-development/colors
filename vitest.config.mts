@@ -5,7 +5,6 @@
  */
 
 import Notifier from '#tests/reporters/notifier'
-import VerboseReporter from '#tests/reporters/verbose'
 import pathe from '@flex-development/pathe'
 import { ok } from 'devlop'
 import ci from 'is-ci'
@@ -62,21 +61,19 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
       },
       clearMocks: true,
       coverage: {
-        all: true,
         clean: true,
         cleanOnRerun: true,
         exclude: [
           '**/*.d.mts',
+          '**/__fixtures__/',
           '**/__mocks__/',
           '**/__tests__/',
           '**/interfaces/',
           '**/types/',
-          '**/index.mts',
-          '!src/index.mts',
           'src/internal/is-tty.node.mts'
         ],
-        extension: ['.mts'],
-        include: ['src'],
+        ignoreClassMethods: [],
+        include: ['src/**/**/*.mts'],
         provider: 'v8',
         reportOnFailure: !ci,
         reporter: env.mode === 'reports'
@@ -93,7 +90,7 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
       outputFile: {
         blob: pathe.join('.vitest-reports', env.mode + '.blob.json'),
         json: pathe.join('__tests__', 'reports', env.mode + '.json'),
-        junit: pathe.join('__tests__', 'reports', 'junit.xml')
+        junit: pathe.join('__tests__', 'reports', env.mode + '.junit.xml')
       },
       passWithNoTests: true,
       projects: [
@@ -130,15 +127,15 @@ function config(this: void, env: ConfigEnv): ViteUserConfig {
         }
       ],
       reporters: JSON.parse(process.env['VITEST_UI'] ?? '0')
-        ? [new Notifier(), new VerboseReporter()]
+        ? [new Notifier(), ['tree']]
         : env.mode === 'reports'
-        ? [new VerboseReporter()]
+        ? [['tree']]
         : [
           ci ? 'github-actions' : new Notifier(),
           'blob',
           'json',
           ['junit', { suiteName: pkg.name }],
-          new VerboseReporter()
+          ['tree']
         ],
       /**
        * Store snapshots next to the directory of `file`.
