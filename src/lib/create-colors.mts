@@ -52,6 +52,7 @@ function createColors(
    */
   const colors: Colors = Object.defineProperties({
     color,
+    styles: { ...map, ...options.colors },
     supported
   } as Colors, {
     color: {
@@ -79,13 +80,17 @@ function createColors(
         return void (color = !!enabled && this.supported)
       }
     },
+    styles: {
+      enumerable: true,
+      writable: false
+    },
     supported: {
       enumerable: true,
       writable: false
     }
   })
 
-  for (const entry of Object.entries({ ...map, ...options.colors })) {
+  for (const entry of Object.entries(colors.styles)) {
     const [color, [open, close, replace]] = entry
 
     colorizer.close = wrap(close)

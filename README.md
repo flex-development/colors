@@ -1,5 +1,6 @@
 # \:rainbow: colors
 
+[![ci](https://github.com/flex-development/colors/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/flex-development/colors/actions/workflows/ci.yml)
 [![github release](https://img.shields.io/github/v/release/flex-development/colors.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/colors/releases/latest)
 [![npm](https://img.shields.io/npm/v/@flex-development/colors.svg)](https://npmjs.com/package/@flex-development/colors)
 [![npm downloads](https://img.shields.io/npm/dm/@flex-development/colors.svg)](https://www.npmcharts.com/compare/@flex-development/colors?interval=30)
@@ -243,7 +244,9 @@ property is an accessor that can be used to disable or enable color output.
 - `get color(): boolean` — color output enabled?
 - `set color(color: boolean | null | undefined)` - enable or disable color output\
   👉 **note**: color output will be disabled if not supported
-- `supported` (`boolean`) — color output supported? (`readonly`)
+- `styles` ([`ColorConfigs`](#colorconfigs)) — record, where each key is the name of a color or style and each value is
+  the configuration for a color function (`readonly`)
+- `supported` (`boolean`) — whether color output is supported (`readonly`)
 
 ### `ToString`
 

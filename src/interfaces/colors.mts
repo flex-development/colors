@@ -3,7 +3,11 @@
  * @module colors/interfaces/Colors
  */
 
-import type { Color, ColorFunctions } from '@flex-development/colors'
+import type {
+  Color,
+  ColorConfigs,
+  ColorFunctions
+} from '@flex-development/colors'
 
 /**
  * A colorizer.
@@ -28,16 +32,26 @@ interface Colors extends ColorFunctions {
   /**
    * Enable or disable color output.
    *
-   * > 👉 **Note**: Even if color output is enabled, it will be disabled if it
-   * > is not supported.
+   * > 👉 **Note**: Even if enabled, color output will be disabled
+   * > if it is not supported.
    *
    * @param {boolean | null | undefined} color
-   *  Color output enabled?
+   *  Whether color output should be enabled
    */
   set color(color: boolean | null | undefined)
 
   /**
-   * Color output supported?
+   * Record, where each key is the name of a color or style and each value is
+   * the configuration for a color function.
+   *
+   * @see {@linkcode ColorConfigs}
+   *
+   * @readonly
+   */
+  readonly styles: ColorConfigs
+
+  /**
+   * Whether color output is supported.
    *
    * @readonly
    */
