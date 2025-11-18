@@ -3,7 +3,7 @@
  * @module colors/lib/createColors
  */
 
-import map from '#internal/map'
+import styles from '#internal/styles'
 import wrap from '#internal/wrap'
 import isColorSupported from '#lib/is-color-supported'
 import type { Color, ColorizerOptions, Colors } from '@flex-development/colors'
@@ -52,7 +52,7 @@ function createColors(
    */
   const colors: Colors = Object.defineProperties({
     color,
-    styles: { ...map, ...options.colors },
+    styles: { ...styles, ...options.colors },
     supported
   } as Colors, {
     color: {

@@ -1,26 +1,28 @@
 /**
- * @file Internal - map
- * @module colors/internal/map
+ * @file Internal - styles
+ * @module colors/internal/styles
  */
 
 import type { Color, ColorConfig } from '@flex-development/colors'
 
 /**
- * Color function config map.
+ * Default styles.
  *
  * @internal
  *
- * @const {Record<Color, ColorConfig>} map
+ * @const {Record<Color, ColorConfig>} styles
  */
-const map: Record<Color, ColorConfig> = {
+const styles: Record<Color, ColorConfig> = {
   bgBlack: [40, 49],
   bgBlackBright: [100, 49],
   bgBlue: [44, 49],
   bgBlueBright: [104, 49],
   bgCyan: [46, 49],
   bgCyanBright: [106, 49],
+  bgGray: [100, 49], // alias for `bgBlackBright`
   bgGreen: [42, 49],
   bgGreenBright: [102, 49],
+  bgGrey: [100, 49], // alias for `bgBlackBright`
   bgMagenta: [45, 49],
   bgMagentaBright: [105, 49],
   bgRed: [41, 49],
@@ -37,14 +39,16 @@ const map: Record<Color, ColorConfig> = {
   cyan: [36, 39],
   cyanBright: [96, 39],
   dim: [2, 22, '\x1b[22m\x1b[2m'],
-  gray: [90, 39],
+  gray: [90, 39], // alias for `blackBright`
   green: [32, 39],
   greenBright: [92, 39],
+  grey: [90, 39], // alias for `blackBright`
   hidden: [8, 28],
   inverse: [7, 27],
   italic: [3, 23],
   magenta: [35, 39],
   magentaBright: [95, 39],
+  overline: [53, 55],
   red: [31, 39],
   redBright: [91, 39],
   reset: [0, 0],
@@ -56,4 +60,4 @@ const map: Record<Color, ColorConfig> = {
   yellowBright: [93, 39]
 }
 
-export default map
+export default styles

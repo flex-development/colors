@@ -3,7 +3,7 @@
  * @module fixtures/fmt
  */
 
-import map from '#internal/map'
+import styles from '#internal/styles'
 import type { Color, ColorConfig } from '@flex-development/colors'
 import { entries } from '@flex-development/tutils'
 
@@ -12,6 +12,6 @@ import { entries } from '@flex-development/tutils'
  *
  * @const {[Color, ColorConfig][]} fmt
  */
-const fmt: [Color, ColorConfig][] = entries(map)
+const fmt: [Color, ColorConfig][] = entries(styles)
 
 export default fmt

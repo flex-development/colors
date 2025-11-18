@@ -11,7 +11,7 @@ describe('unit-d:interfaces/Colors', () => {
   type RK = ReadonlyKeys<TestSubject>
 
   it('should extend ColorFunctions', () => {
-    expectTypeOf<TestSubject>().toMatchTypeOf<ColorFunctions>()
+    expectTypeOf<TestSubject>().toExtend<ColorFunctions>()
   })
 
   it('should match [color: boolean]', () => {

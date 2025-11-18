@@ -3,11 +3,11 @@
  * @module colors/internal/tests/unit/wrap
  */
 
-import map from '#internal/map'
+import styles from '#internal/styles'
 import testSubject from '#internal/wrap'
 
 describe('unit:internal/wrap', () => {
   it('should return escape sequence', () => {
-    expect(testSubject(map.reset[0])).toMatchSnapshot()
+    expect(testSubject(styles.reset[0])).toMatchSnapshot()
   })
 })

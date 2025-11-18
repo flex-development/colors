@@ -19,7 +19,7 @@ export default [
     languageOptions: { globals: globals.browser }
   },
   {
-    files: ['src/internal/map.mts', 'src/internal/wrap.mts'],
+    files: ['src/internal/styles.mts', 'src/internal/wrap.mts'],
     rules: {
       'unicorn/escape-case': 0,
       'unicorn/no-hex-escape': 0

@@ -24,8 +24,10 @@ interface ColorFunctions {
   bgBlueBright: ColorFunction
   bgCyan: ColorFunction
   bgCyanBright: ColorFunction
+  bgGray: ColorFunction
   bgGreen: ColorFunction
   bgGreenBright: ColorFunction
+  bgGrey: ColorFunction
   bgMagenta: ColorFunction
   bgMagentaBright: ColorFunction
   bgRed: ColorFunction
@@ -45,11 +47,13 @@ interface ColorFunctions {
   gray: ColorFunction
   green: ColorFunction
   greenBright: ColorFunction
+  grey: ColorFunction
   hidden: ColorFunction
   inverse: ColorFunction
   italic: ColorFunction
   magenta: ColorFunction
   magentaBright: ColorFunction
+  overline: ColorFunction
   red: ColorFunction
   redBright: ColorFunction
   reset: ColorFunction

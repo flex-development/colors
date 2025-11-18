@@ -8,8 +8,10 @@ exports[`unit:colors > should be colorizer object 1`] = `
   "bgBlueBright": [Function bgBlueBright],
   "bgCyan": [Function bgCyan],
   "bgCyanBright": [Function bgCyanBright],
+  "bgGray": [Function bgGray],
   "bgGreen": [Function bgGreen],
   "bgGreenBright": [Function bgGreenBright],
+  "bgGrey": [Function bgGrey],
   "bgMagenta": [Function bgMagenta],
   "bgMagentaBright": [Function bgMagentaBright],
   "bgRed": [Function bgRed],
@@ -29,11 +31,13 @@ exports[`unit:colors > should be colorizer object 1`] = `
   "gray": [Function gray],
   "green": [Function green],
   "greenBright": [Function greenBright],
+  "grey": [Function grey],
   "hidden": [Function hidden],
   "inverse": [Function inverse],
   "italic": [Function italic],
   "magenta": [Function magenta],
   "magentaBright": [Function magentaBright],
+  "overline": [Function overline],
   "red": [Function red],
   "redBright": [Function redBright],
   "reset": [Function reset],
@@ -63,12 +67,20 @@ exports[`unit:colors > should be colorizer object 1`] = `
       106,
       49,
     ],
+    "bgGray": [
+      100,
+      49,
+    ],
     "bgGreen": [
       42,
       49,
     ],
     "bgGreenBright": [
       102,
+      49,
+    ],
+    "bgGrey": [
+      100,
       49,
     ],
     "bgMagenta": [
@@ -149,6 +161,10 @@ exports[`unit:colors > should be colorizer object 1`] = `
       92,
       39,
     ],
+    "grey": [
+      90,
+      39,
+    ],
     "hidden": [
       8,
       28,
@@ -168,6 +184,10 @@ exports[`unit:colors > should be colorizer object 1`] = `
     "magentaBright": [
       95,
       39,
+    ],
+    "overline": [
+      53,
+      55,
     ],
     "red": [
       31,
