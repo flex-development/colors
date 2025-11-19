@@ -13,7 +13,7 @@
 [![vitest](https://img.shields.io/badge/-vitest-6e9f18?style=flat\&logo=vitest\&logoColor=ffffff)](https://vitest.dev)
 [![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat\&logo=yarn\&logoColor=ffffff)](https://yarnpkg.com)
 
-Colorize messages in the terminal and browser
+Style messages in the terminal and browser
 
 ## Contents
 

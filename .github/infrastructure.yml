@@ -167,7 +167,7 @@ repository:
   automated_security_fixes: true
   default_branch: main
   delete_branch_on_merge: true
-  description: ':rainbow: a small library for coloring and styling messages'
+  description: ':rainbow: a small library for styling messages'
   has_issues: true
   has_projects: true
   has_wiki: false
