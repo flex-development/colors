@@ -11,8 +11,9 @@ import globals from 'globals'
  * eslint configuration.
  *
  * @type {import('eslint').Linter.Config[]}
+ * @const config
  */
-export default [
+const config = [
   ...fldv.configs.node,
   {
     files: ['src/internal/*.browser.mts'],
@@ -32,3 +33,5 @@ export default [
     }
   }
 ]
+
+export default config
