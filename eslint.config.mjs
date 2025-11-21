@@ -20,9 +20,18 @@ const config = [
     languageOptions: { globals: globals.browser }
   },
   {
+    files: [
+      'src/internal/styles.mts',
+      'src/internal/wrap.mts',
+      'src/lib/__tests__/strip-ansi.spec.mts'
+    ],
+    rules: {
+      'unicorn/escape-case': 0
+    }
+  },
+  {
     files: ['src/internal/styles.mts', 'src/internal/wrap.mts'],
     rules: {
-      'unicorn/escape-case': 0,
       'unicorn/no-hex-escape': 0
     }
   },

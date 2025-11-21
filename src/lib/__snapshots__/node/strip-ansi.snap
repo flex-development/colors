@@ -1,9 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[0mReset only\\u001b[0m") 1`] = `"Reset only"`;
+
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[1mbold text\\u001b[22m") 1`] = `"bold text"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[2JClear screen\\u001b[HHome") 1`] = `"Clear screenHome"`;
 
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[4m\\u001b[34m\\u001b[1mbold blue underlined text\\u001b[22m\\u001b[39m\\u001b[24m") 1`] = `"bold blue underlined text"`;
 
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[31mRed \\u001b[1mBold Red\\u001b[22m Normal Red\\u001b[0m") 1`] = `"Red Bold Red Normal Red"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[31mRed\\u0007Text\\u001b[0m") 1`] = `"Red\\u0007Text"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[32m\\u001b]8;;https://example.com\\u001b\\\\green link\\u001b]8;;\\u001b\\\\\\u001b[0m") 1`] = `"green link"`;
+
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[34m\\u001b[1mbold blue text\\u001b[22m\\u001b[39m") 1`] = `"bold blue text"`;
 
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[35m✨ purple text with emojis ✨\\u001b[0m") 1`] = `"✨ purple text with emojis ✨"`;
+
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[104m\\u001b[1mbold text with bright blue background\\u001b[22m\\u001b[49m") 1`] = `"bold text with bright blue background"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b]0;Terminal title\\u0007Some text") 1`] = `"Some text"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b]8;;https://a.com\\u001b\\\\A\\u001b]8;;\\u001b\\\\ and \\u001b]8;;https://b.com\\u001b\\\\B\\u001b]8;;\\u001b\\\\") 1`] = `"A and B"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b]8;;https://example.com\\u001b\\\\Click here\\u001b]8;;\\u001b\\\\") 1`] = `"Click here"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("✅ \\u001b[1mbold text with emoji prefix\\u001b[22m") 1`] = `"✅ bold text with emoji prefix"`;
