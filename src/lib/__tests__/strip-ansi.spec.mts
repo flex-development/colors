@@ -4,9 +4,10 @@
  */
 
 import testSubject from '#lib/strip-ansi'
+import type { ToString } from '@flex-development/colors'
 
 describe('unit:lib/stripAnsi', () => {
-  let hrc: (value: string) => string
+  let hrc: (value: string, toString?: ToString | null | undefined) => string
 
   beforeAll(() => {
     /**
@@ -14,20 +15,63 @@ describe('unit:lib/stripAnsi', () => {
      *
      * @this {void}
      *
-     * @param {string} value
-     *  The string containing control characters
+     * @param {unknown} value
+     *  The string containing control characters.
+     *  Non-string values will be converted to strings (i.e. `toString(value)`)
+     * @param {ToString | null | undefined} [toString]
+     *  Convert `value` to a string
      * @return {string}
      *  `value` with human-readable control characters
      */
-    hrc = function hrc(this: void, value: string): string {
-      return value.replace(/[\u0000-\u001F\u007F-\u009F]/g, char => {
-        return `\\u${char.codePointAt(0)!.toString(16).padStart(4, '0')}`
-      })
+    hrc = function hrc(
+      this: void,
+      value: unknown,
+      toString?: ToString | null | undefined
+    ): string {
+      toString ??= String
+
+      /**
+       * Regular expression matching control characters.
+       *
+       * @const {RegExp} re
+       */
+      const re: RegExp = /[\u0000-\u001F\u007F-\u009F]/g
+
+      return toString(value).replace(re, hr)
+
+      /**
+       * Convert a control `character` to a human-readable string.
+       *
+       * @this {void}
+       *
+       * @param {string} character
+       *  The control character
+       * @return {string}
+       *  The control `character` as a human-readable string
+       */
+      function hr(this: void, character: string): string {
+        return `\\u${character.codePointAt(0)!.toString(16).padStart(4, '0')}`
+      }
     }
   })
 
   it.each<Parameters<typeof testSubject>>([
-    ['\x1B[1mbold text\u001B[22m'],
+    [
+      { value: '\x1B[1mbold text\u001B[22m' },
+      /**
+       * Convert `value` to a string.
+       *
+       * @this {void}
+       *
+       * @param {{ value: string } | string} file
+       *  The virtual file, or its contents
+       * @return {string}
+       *  The contents of `file`
+       */
+      function toString(this: void, file: { value: string } | string): string {
+        return typeof file === 'string' ? file : file.value
+      }
+    ],
     ['\x1B[34m\x1B[1mbold blue text\u001B[22m\x1B[39m'],
     ['\x1B[104m\u001B[1mbold text with bright blue background\x1B[22m\x1B[49m'],
     ['\x1B[4m\x1B[34m\x1B[1mbold blue underlined text\x1B[22m\x1B[39m\x1B[24m'],
@@ -57,7 +101,10 @@ describe('unit:lib/stripAnsi', () => {
 
     // multiple hyperlinks in one string
     ['\u001B]8;;https://a.com\u001B\\A\u001B]8;;\u001B\\ and \u001B]8;;https://b.com\u001B\\B\u001B]8;;\u001B\\']
-  ])('should return `value` with ansi escape codes removed (%j)', value => {
-    expect(hrc(testSubject(value))).toMatchSnapshot()
+  ])('should return `value` with ansi escape codes removed (%j)', (
+    value,
+    toString
+  ) => {
+    expect(hrc(testSubject(value, toString), toString)).toMatchSnapshot()
   })
 })

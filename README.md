@@ -24,7 +24,8 @@ Style messages in the terminal and browser
 - [API](#api)
   - [`colors`](#colors)
   - [`createColors([options])`](#createcolorsoptions)
-  - [`isColorSupported`](#iscolorsupported)
+  - [`hasAnsi(value[, toString])`](#hasansivalue-tostring)
+  - [`isColorSupported()`](#iscolorsupported)
   - [`stripAnsi(value[, toString])`](#stripansivalue-tostring)
 - [Types](#types)
   - [`ColorConfig`](#colorconfig)
@@ -34,7 +35,7 @@ Style messages in the terminal and browser
   - [`Color`](#color)
   - [`ColorizerOptions`](#colorizeroptions)
   - [`Colors`](#colors-1)
-  - [`ToString`](#tostring)
+  - [`ToString<[T]>`](#tostringt)
 - [Contribute](#contribute)
 
 ## What is this?
@@ -121,15 +122,32 @@ Create a colorizer.
 
 #### Parameters
 
-- `options` ([`ColorizerOptions`](#colorizeroptions) | `boolean`, optional) —
-  boolean indicating if color output should be enabled, or an options object to create a custom colorizer
+- `options` ([`ColorizerOptions`](#colorizeroptions) | `boolean`, optional)
+  — boolean indicating if color output should be enabled, or an options object to create a custom colorizer
   - **default**: [`isColorSupported()`](#iscolorsupported)
 
 #### Returns
 
 ([`Colors`](#colors-1)) Colorizer object
 
-### `isColorSupported`
+### `hasAnsi(value[, toString])`
+
+Check if `value` contains ANSI escape codes.
+
+#### Parameters
+
+- `value` (`unknown`)
+  — the string or value to check.
+  non-string values will be converted to strings (i.e. `toString(value)`)
+- `toString` ([`ToString`](#tostringt), optional)
+  — convert `value` to a string
+  - **default**: `String`
+
+#### Returns
+
+(`boolean`) `true` if `value` contains ANSI escape codes, `false` otherwise
+
+### `isColorSupported()`
 
 Check if color output is supported.
 
@@ -143,13 +161,16 @@ Remove ANSI escape codes from `value`.
 
 #### Parameters
 
-- `value` (`unknown`) — the string or value to remove escape codes from
-- `toString` ([`ToString`](#tostring), optional) — convert `value` to a string
+- `value` (`unknown`)
+  — the string or value to remove escape codes from.
+  non-string values will be converted to strings (i.e. `toString(value)`)
+- `toString` ([`ToString`](#tostringt), optional)
+  — convert `value` to a string
   - **default**: `String`
 
 #### Returns
 
-(`string`) Stringified `value` with ANSI escape codes removed
+(`string`) The stringified `value` with ANSI escape codes removed
 
 ## Types
 
@@ -187,9 +208,12 @@ Colorize `value` (TypeScript interface).
 
 #### Properties
 
-- `close` (`string`) — reset sequence
-- `open` (`string`) — sequence used to set colors
-- `replace` (`string`, optional) — reset sequence replacement
+- `close` (`string`)
+  — the reset sequence
+- `open` (`string`)
+  — the sequence used to set styles
+- `replace` (`string`, optional)
+  — the reset sequence replacement
 
 #### Returns
 
@@ -223,8 +247,10 @@ Options for creating a colorizer (TypeScript interface).
 
 #### Properties
 
-- `color` (`boolean`, optional) — color output enabled?
-- `colors` ([`Partial<ColorConfigs>`](#colorconfigs), optional) — color function config map
+- `color` (`boolean`, optional)
+  — whether color output should be enabled
+- `colors` ([`Partial<ColorConfigs>`](#colorconfigs), optional)
+  — record, where each key is a the name of a color or style and each value is the configuration for that color or style
 
 ### `Colors`
 
@@ -232,8 +258,8 @@ Options for creating a colorizer (TypeScript interface).
 
 A colorizer (TypeScript interface).
 
-Colorizers contain [`Color`](#color) functions. Each function corresponds to a terminal color or style. The `color`
-property is an accessor that can be used to disable or enable color output.
+Colorizers contain [`Color`](#color) functions. Each function corresponds to a terminal color or style.
+The `color` property is an accessor that can be used to disable or enable color output.
 
 #### Extends
 
@@ -241,24 +267,38 @@ property is an accessor that can be used to disable or enable color output.
 
 #### Properties
 
-- `get color(): boolean` — color output enabled?
-- `set color(color: boolean | null | undefined)` - enable or disable color output\
-  👉 **note**: color output will be disabled if not supported
-- `styles` ([`ColorConfigs`](#colorconfigs)) — record, where each key is the name of a color or style and each value is
+- `get color(): boolean`
+  — color output enabled?
+- `set color(color: boolean | null | undefined)`
+  - enable or disable color output\
+    👉 **note**: color output will be disabled if not supported
+- `styles` ([`ColorConfigs`](#colorconfigs))
+  — record, where each key is the name of a color or style and each value is
   the configuration for a color function (`readonly`)
-- `supported` (`boolean`) — whether color output is supported (`readonly`)
+- `supported` (`boolean`)
+  — whether color output is supported (`readonly`)
 
-### `ToString`
+### `ToString<[T]>`
 
 Convert `value` to a string (TypeScript type).
 
+```ts
+type ToString<T = any> = (this: void, value: T) => string
+```
+
+#### Type Parameters
+
+- `T` (`any`, optional)
+  — the thing to stringify
+
 #### Parameters
 
-- `value` (`unknown`) — the thing to stringify
+- `value` (`T`)
+  — the thing to stringify
 
 #### Returns
 
-(`string`) Stringified `value`
+(`string`) The stringified `value`
 
 ## Contribute
 
