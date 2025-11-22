@@ -11,6 +11,7 @@ hmarr
 jchen
 kaisugi
 mbold
+mnot
 nvmrc
 pkgs
 sarif

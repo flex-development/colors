@@ -1,32 +1,32 @@
 /**
- * @file stripAnsi
- * @module colors/lib/stripAnsi
+ * @file hasAnsi
+ * @module colors/lib/hasAnsi
  */
 
 import ANSI_PATTERN from '#internal/ansi-pattern'
 import type { ToString } from '@flex-development/colors'
 
 /**
- * Remove ANSI escape codes from `value`.
+ * Check if `value` contains ANSI escape codes.
  *
  * @see {@linkcode ToString}
  *
  * @this {void}
  *
  * @param {unknown} value
- *  The string or value to remove escape codes from.
+ *  The string or value to check.
  *  Non-string values will be converted to strings (i.e. `toString(value)`)
  * @param {ToString | null | undefined} [toString]
  *  Convert `value` to a string
- * @return {string}
- *  The stringified `value` with ANSI escape codes removed
+ * @return {boolean}
+ *  `true` if `value` contains ANSI escape codes, `false` otherwise
  */
-function stripAnsi(
+function hasAnsi(
   this: void,
   value: unknown,
   toString?: ToString | null | undefined
-): string {
-  return (toString ?? String)(value).replace(new RegExp(ANSI_PATTERN, 'g'), '')
+): boolean {
+  return !!new RegExp(ANSI_PATTERN).exec((toString ?? String)(value))
 }
 
-export default stripAnsi
+export default hasAnsi

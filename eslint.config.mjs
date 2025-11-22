@@ -23,6 +23,7 @@ const config = [
     files: [
       'src/internal/styles.mts',
       'src/internal/wrap.mts',
+      'src/lib/__tests__/has-ansi.spec.mts',
       'src/lib/__tests__/strip-ansi.spec.mts'
     ],
     rules: {
