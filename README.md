@@ -25,7 +25,6 @@ Style messages in the terminal and browser
   - [`colors`](#colors)
   - [`createColors([options])`](#createcolorsoptions)
   - [`isColorSupported()`](#iscolorsupported)
-  - [`stripAnsi(value[, toString])`](#stripansivalue-tostring)
 - [Types](#types)
   - [`ColorConfig`](#colorconfig)
   - [`ColorConfigs`](#colorconfigs)
@@ -34,7 +33,6 @@ Style messages in the terminal and browser
   - [`Color`](#color)
   - [`ColorizerOptions`](#colorizeroptions)
   - [`Colors`](#colors-1)
-  - [`ToString<[T]>`](#tostringt)
 - [Contribute](#contribute)
 
 ## What is this?
@@ -107,7 +105,6 @@ This package exports the following identifiers:
 - [`colors`](#colors)
 - [`createColors`](#createcolorsoptions)
 - [`isColorSupported`](#iscolorsupported)
-- [`stripAnsi`](#stripansivalue-tostring)
 
 The default export is [`colors`](#colors).
 
@@ -136,23 +133,6 @@ Check if color output is supported.
 #### Returns
 
 (`boolean`) `true` if color output is supported, `false` otherwise
-
-### `stripAnsi(value[, toString])`
-
-Remove ANSI escape codes from `value`.
-
-#### Parameters
-
-- `value` (`unknown`)
-  — the string or value to remove escape codes from.
-  non-string values will be converted to strings (i.e. `toString(value)`)
-- `toString` ([`ToString`](#tostringt), optional)
-  — convert `value` to a string
-  - **default**: `String`
-
-#### Returns
-
-(`string`) The stringified `value` with ANSI escape codes removed
 
 ## Types
 
@@ -259,28 +239,6 @@ The `color` property is an accessor that can be used to disable or enable color 
   the configuration for a color function (`readonly`)
 - `supported` (`boolean`)
   — whether color output is supported (`readonly`)
-
-### `ToString<[T]>`
-
-Convert `value` to a string (TypeScript type).
-
-```ts
-type ToString<T = any> = (this: void, value: T) => string
-```
-
-#### Type Parameters
-
-- `T` (`any`, optional)
-  — the thing to stringify
-
-#### Parameters
-
-- `value` (`T`)
-  — the thing to stringify
-
-#### Returns
-
-(`string`) The stringified `value`
 
 ## Contribute
 

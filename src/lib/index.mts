@@ -5,4 +5,3 @@
 
 export { default as createColors } from '#lib/create-colors'
 export { default as isColorSupported } from '#lib/is-color-supported'
-export { default as stripAnsi } from '#lib/strip-ansi'
