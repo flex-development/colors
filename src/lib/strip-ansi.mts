@@ -14,12 +14,12 @@ import type { ToString } from '@flex-development/colors'
  * @this {void}
  *
  * @param {unknown} value
- *  The string or value to remove escape codes from. Non-string values will be
- *  converted to strings (i.e. `toString(value)`)
+ *  The string or value to remove escape codes from.
+ *  Non-string values will be converted to strings (i.e. `toString(value)`)
  * @param {ToString | null | undefined} [toString]
  *  Convert `value` to a string
  * @return {string}
- *  Stringified `value` with ANSI escape codes removed
+ *  The stringified `value` with ANSI escape codes removed
  */
 function stripAnsi(
   this: void,

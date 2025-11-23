@@ -20,17 +20,17 @@ interface ColorFunction {
   (this: void, value: unknown): string
 
   /**
-   * Reset sequence.
+   * The reset sequence.
    */
   close: string
 
   /**
-   * Sequence used to set colors.
+   * The sequence used to set styles.
    */
   open: string
 
   /**
-   * Reset sequence replacement.
+   * The reset sequence replacement.
    */
   replace?: string | null | undefined
 }

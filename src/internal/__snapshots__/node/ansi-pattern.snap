@@ -1,3 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`unit:internal/ANSI_PATTERN > should be pattern matching ansi escape codes 1`] = `"(?:\\u001B\\][\\s\\S]*?(?:\\u0007|\\u001B\\u005C|\\u009C))|[\\u001B\\u009B][[\\]()#;?]*(?:\\d{1,4}(?:[;:]\\d{0,4})*)?[\\dA-PR-TZcf-nq-uy=><~]"`;
+exports[`unit:internal/ANSI_PATTERN > should be pattern matching ansi escape codes 1`] = `"(?<ansi>(?:(?<osc>(?<osc_introducer>[\\u001B\\u009B])\\](?<osc_command>\\d{1,4})(?<osc_sep>;)?(?<osc_data>(?:(?!\\u0007|(?:\\u001B\\\\))[\\s\\S])*)(?<osc_terminator>\\u0007|\\u001B\\\\)))|(?:(?<csi>(?<csi_introducer>[\\u001B\\u009B])\\[(?<csi_params>[0-9]{0,4}(?:;[0-9]{0,4})*)?(?<csi_intermediate>[\\x20-\\x2F]*)(?<csi_final>[\\x40-\\x7E])))|(?:(?<esc>\\u001B(?<esc_final>[A-PR-TZcf-nq-uy=><~]))))"`;

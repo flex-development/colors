@@ -2,8 +2,6 @@
 
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[0mReset only\\u001b[0m") 1`] = `"Reset only"`;
 
-exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[1mbold text\\u001b[22m") 1`] = `"bold text"`;
-
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[2JClear screen\\u001b[HHome") 1`] = `"Clear screenHome"`;
 
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b[4m\\u001b[34m\\u001b[1mbold blue underlined text\\u001b[22m\\u001b[39m\\u001b[24m") 1`] = `"bold blue underlined text"`;
@@ -27,3 +25,5 @@ exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes rem
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("\\u001b]8;;https://example.com\\u001b\\\\Click here\\u001b]8;;\\u001b\\\\") 1`] = `"Click here"`;
 
 exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ("✅ \\u001b[1mbold text with emoji prefix\\u001b[22m") 1`] = `"✅ bold text with emoji prefix"`;
+
+exports[`unit:lib/stripAnsi > should return \`value\` with ansi escape codes removed ({"value":"\\u001b[1mbold text\\u001b[22m"}) 1`] = `"bold text"`;

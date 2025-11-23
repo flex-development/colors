@@ -6,13 +6,16 @@
 /**
  * Convert `value` to a string.
  *
+ * @template {any} [T=any]
+ *  The thing to stringify
+ *
  * @this {void}
  *
  * @param {unknown} value
  *  The thing to stringify
  * @return {string}
- *  Stringified `value`
+ *  The stringified `value`
  */
-type ToString = (this: void, value: unknown) => string
+type ToString<T = any> = (this: void, value: T) => string
 
 export type { ToString as default }
