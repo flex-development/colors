@@ -1,3 +1,21 @@
+## [2.0.0](https://github.com/flex-development/colors/compare/1.1.1...2.0.0) (2025-11-23)
+
+### ⚠ BREAKING CHANGES
+
+- remove `stripAnsi`
+
+### :package: Build
+
+- [[`3be325f`](https://github.com/flex-development/colors/commit/3be325ffab0367a3e31ea315bf024973d35dcef8)] **yarn:** bump yarn from 4.9.1 to 4.11.0
+
+### :house_with_garden: Housekeeping
+
+- [[`dba6bf8`](https://github.com/flex-development/colors/commit/dba6bf8b44843a87c89dc97da2460892b2a37acb)] **pkg:** fix husky setup
+
+### :mechanical_arm: Refactors
+
+- [[`9366951`](https://github.com/flex-development/colors/commit/93669511b23e629f8ea806e86b1d56b2faaa5c60)] remove `stripAnsi`
+
 ## [1.1.1](https://github.com/flex-development/colors/compare/1.1.0...1.1.1) (2025-11-22)
 
 ### :package: Build
@@ -287,6 +305,7 @@
 ### :mechanical_arm: Refactors
 
 - [[`4a2e09b`](https://github.com/flex-development/colors/commit/4a2e09b5cc72c8b02caf3cb479fc612f370e5e4e)] color support detection
+
 
 
 
