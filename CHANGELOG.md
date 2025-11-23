@@ -1,3 +1,18 @@
+## [1.1.1](https://github.com/flex-development/colors/compare/1.1.0...1.1.1) (2025-11-22)
+
+### :package: Build
+
+- [[`85aca8b`](https://github.com/flex-development/colors/commit/85aca8ba32dbc79e1d72761bb6552d46f8694241)] **deps-dev:** Bump the vitest group with 3 updates ([#266](https://github.com/flex-development/colors/issues/266))
+
+### :robot: Continuous Integration
+
+- [[`6dcd7cc`](https://github.com/flex-development/colors/commit/6dcd7cc47563fe478c6a7a30b8070a6aab3c38c5)] **deps:** Bump actions/checkout from 5.0.1 to 6.0.0 ([#265](https://github.com/flex-development/colors/issues/265))
+
+### :bug: Fixes
+
+- [[`54f53ad`](https://github.com/flex-development/colors/commit/54f53adbcafacd457aa23cf959bdc269573e2e36)] [`stripAnsi`] ansi pattern
+- [[`d1f3056`](https://github.com/flex-development/colors/commit/d1f30565573439bc1fa199dff47ed51bee35c68a)] [`stripAnsi`] ansi pattern
+
 ## [1.1.0](https://github.com/flex-development/colors/compare/1.0.2...1.1.0) (2025-11-18)
 
 ### :package: Build
@@ -272,6 +287,7 @@
 ### :mechanical_arm: Refactors
 
 - [[`4a2e09b`](https://github.com/flex-development/colors/commit/4a2e09b5cc72c8b02caf3cb479fc612f370e5e4e)] color support detection
+
 
 
 
