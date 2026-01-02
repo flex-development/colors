@@ -170,7 +170,7 @@
     "dprint": "0.51.1",
     "editorconfig": "3.0.1",
     "eslint": "9.39.2",
-    "globals": "16.5.0",
+    "globals": "17.0.0",
     "growl": "1.10.5",
     "happy-dom": "20.0.11",
     "husky": "9.1.7",
