@@ -1535,7 +1535,7 @@ __metadata:
     remark: "npm:15.0.1"
     remark-cli: "npm:12.0.1"
     sh-syntax: "npm:0.5.8"
-    tinyrainbow: "npm:3.0.3"
+    tinyrainbow: "npm:3.1.0"
     trash-cli: "npm:7.2.0"
     ts-dedent: "npm:2.2.0"
     typescript: "npm:5.9.3"
@@ -10866,10 +10866,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyrainbow@npm:3.0.3, tinyrainbow@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "tinyrainbow@npm:3.0.3"
-  checksum: 10/169cc63c15e1378674180f3207c82c05bfa58fc79992e48792e8d97b4b759012f48e95297900ede24a81f0087cf329a0d85bb81109739eacf03c650127b3f6c1
+"tinyrainbow@npm:3.1.0, tinyrainbow@npm:^3.0.3":
+  version: 3.1.0
+  resolution: "tinyrainbow@npm:3.1.0"
+  checksum: 10/4c2c01dde1e5bb9a74973daaae141d4d733d246280b2f9a7f6a9e7dd8e940d48b2580a6086125278777897bc44635d6ccec5f9f563c2179dd2129f4542d0ec05
   languageName: node
   linkType: hard
 
